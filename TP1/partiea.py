@@ -10,20 +10,20 @@ def ajouter_etudiant(d: dict, nom: str, note: float) -> None:
 #mesage d'erreur
 
 def moyenne_classe(d: dict) -> float:
-    #Calcule la moyenne de la classe.
+    #Calcule la moyenne de la classe
     if not d:
         return 0.0
     return sum(d.values()) / len(d)
 
 def meilleur_etudiant(d: dict) -> tuple[str, float] | None:
-    """Renvoie (nom, note) du meilleur étudiant."""
+#Renvoie (nom, note) du meilleur étudiant
     if not d:
         return None
     cle_max = max(d, key=d.get)
     return (cle_max, d[cle_max])
 
 def sauvegarder_notes(d: dict, fichier: str) -> None:
-    """Sauvegarde le dictionnaire dans un fichier texte."""
+#Sauvegarde le dictionnaire dans un fichier texte
     try:
         with open(fichier, "w", encoding="utf-8") as f:
             for nom, note in d.items():
@@ -33,7 +33,7 @@ def sauvegarder_notes(d: dict, fichier: str) -> None:
         print(f"Erreur lors de la sauvegarde : {e}")
 
 def recharger_notes(fichier: str) -> dict:
-    """Recharge le dictionnaire depuis un fichier texte."""
+#Recharge le dictionnaire depuis un fichier texte.
     d = {}
     if not os.path.exists(fichier):
         return d
@@ -52,9 +52,6 @@ def recharger_notes(fichier: str) -> dict:
     return d
 
 
-# ==============================================================================
-# SAISIE MANUELLE PAR L'UTILISATEUR
-# ==============================================================================
 if __name__ == "__main__":
     etudiants = {}
 
