@@ -26,3 +26,9 @@ import random
         else:
             print(f"🎉 « Gagné » en {essai} essai(s) !")
             return True
+        # Fin des 10 essais sans succès
+    print(f"\n☠️ Perdu ! Vous avez dépassé les {max_essais} essais.")
+    print(f"Le nombre secret était : {nombre_secret}")
+    return False
+
+def devine_le_nombre():
