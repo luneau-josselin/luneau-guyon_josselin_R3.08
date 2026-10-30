@@ -18,3 +18,11 @@ import random
                 print("⚠️ Veuillez entrer un nombre entier valide !")
                 #mesage d'erreur
                 
+                # Étape 3 & 4 : Comparaison
+        if saisie < nombre_secret:
+            print("« Trop petit »")
+        elif saisie > nombre_secret:
+            print("« Trop grand »")
+        else:
+            print(f"🎉 « Gagné » en {essai} essai(s) !")
+            return True
