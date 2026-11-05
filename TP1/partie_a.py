@@ -1,4 +1,4 @@
-
+import os
 
 
 def ajouter_etudiant(d: dict, nom: str, note: float) -> None:
