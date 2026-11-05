@@ -23,3 +23,23 @@ def jouer(self, x, y, joueur):
 
         self.grid[x][y] = joueur
         return True        
+def est_gagnant(self, j):
+        """Vérifie si le joueur j a aligné 3 symboles (lignes, colonnes, diagonales)."""
+        # Lignes et Colonnes
+        for i in range(3):
+            if all(self.grid[i][c] == j for c in range(3)):
+                return True
+            if all(self.grid[r][i] == j for r in range(3)):
+                return True
+
+        # Diagonales
+        if all(self.grid[i][i] == j for i in range(3)):
+            return True
+        if all(self.grid[i][2 - i] == j for i in range(3)):
+            return True
+
+        return False
+
+    def est_plein(self):
+        """Renvoie True si aucune case n'est libre."""
+        return all(case != " " for row in self.grid for case in row)
