@@ -11,3 +11,15 @@ class Grille:
             if i < 2:
                 print("  " + "---+" * 2 + "---")
         print()
+def jouer(self, x, y, joueur):
+        """Place un symbole ('X' ou 'O') si les coordonnées sont valides et la case libre."""
+        if not (0 <= x < 3 and 0 <= y < 3):
+            print(f"Coup ({x}, {y}) refusé : hors grille.")
+            return False
+        
+        if self.grid[x][y] != " ":
+            print(f"Coup ({x}, {y}) refusé : case occupée.")
+            return False
+
+        self.grid[x][y] = joueur
+        return True        
