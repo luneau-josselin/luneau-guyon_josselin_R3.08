@@ -33,7 +33,8 @@ class JeuMorpion:
             print("Match nul !")
         return "NUL"
 
-    def simuler_parties(nb_parties=20):
+
+def simuler_parties(nb_parties=20):
     """Simule nb_parties automatisées entre deux IA (Partie C)."""
     scores = {"X": 0, "O": 0, "NUL": 0}
     for i in range(nb_parties):
