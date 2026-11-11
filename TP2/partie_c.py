@@ -12,3 +12,23 @@ class JeuMorpion:
             if affichage:
                 self.grille.afficher()
                 print(f"Tour du joueur {joueur_actuel.symbole}")
+
+            # Demande du coup jusqu'à ce qu'il soit valide
+            valide = False
+            while not valide:
+                x, y = joueur_actuel.prochain_coup(self.grille)
+                valide = self.grille.jouer(x, y, joueur_actuel.symbole)
+
+            # Vérification de la victoire
+            if self.grille.est_gagnant(joueur_actuel.symbole):
+                if affichage:
+                    self.grille.afficher()
+                    print(f" Victoire du joueur {joueur_actuel.symbole} ! ")
+                return joueur_actuel.symbole
+
+            self.tour += 1
+
+        if affichage:
+            self.grille.afficher()
+            print("Match nul !")
+        return "NUL"
